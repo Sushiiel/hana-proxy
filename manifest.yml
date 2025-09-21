@@ -4,10 +4,11 @@ applications:
   memory: 512M
   buildpacks:
     - python_buildpack
+  command: gunicorn -w 4 -b 0.0.0.0:$PORT app:app
   env:
-    HANA_HOST: 6f30991a-1c09-4d97-ad5a-581c884519b0.hana.trial-us10.hanacloud.ondemand.com
-    HANA_PORT: 443
-    HANA_USER: APP_USER_STREAMLIT
-    HANA_PASSWORD: 595162sushiielA@
-    HANA_SCHEMA: SMART_RETAIL1
-    PROXY_API_KEY: f68fc7abdca618d36b647c0a8baa06cc
+    HANA_HOST: "6f30991a-1c09-4d97-ad5a-581c884519b0.hana.trial-us10.hanacloud.ondemand.com"
+    HANA_PORT: "443"
+    HANA_USER: "APP_USER_STREAMLIT"
+    HANA_PASSWORD: "595162sushiielA@"
+    HANA_SCHEMA: "SMART_RETAIL1"
+    PROXY_API_KEY: "f68fc7abdca618d36b647c0a8baa06cc"
